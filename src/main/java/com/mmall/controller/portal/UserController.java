@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 
+import static com.mmall.common.ServerResponse.createBySuccess;
+
 /**
  * Created by kaka on 2017/5/7.
  */
@@ -49,7 +51,7 @@ public class UserController {
     @ResponseBody
     public  ServerResponse<User> logout(HttpSession session){
         session.removeAttribute(Const.CURRENT_USER);
-        return  ServerResponse.createBySuccess();
+        return  createBySuccess();
     }
 
     /**
